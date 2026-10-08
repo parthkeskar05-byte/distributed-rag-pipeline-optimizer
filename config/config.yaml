@@ -1,0 +1,21 @@
+strategies:
+  baseline:
+    chunk_size: 500
+    chunk_overlap: 50
+    embedding_model: "all-MiniLM-L6-v2"
+    top_k: 3
+  optimized:
+    chunk_size: 300
+    chunk_overlap: 100
+    embedding_model: "all-MiniLM-L6-v2"
+    top_k: 5
+    rerank: true
+
+vector_store:
+  type: "faiss"
+  index_type: "Flat"
+
+metrics:
+  - precision@k
+  - recall@k
+  - mrr
