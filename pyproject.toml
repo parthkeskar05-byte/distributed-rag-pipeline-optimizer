@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+# Without this, `from src.config import ...` fails unless the caller happens
+# to run pytest from the repo root with the root on sys.path.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
